@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Kalkulator_Walut.MainPage">
+
+    <StackLayout>
+        <Frame BackgroundColor="#2196F3" Padding="24" CornerRadius="0">
+            <Label Text="Kalkulator walut." HorizontalTextAlignment="Center" TextColor="White" FontSize="36"/>
+        </Frame>
+        <Picker Title="Wybierz walute" ItemsSource="{Binding Waluty}" ItemDisplayBinding="{Binding currency}" SelectedItem="{Binding SelectedWaluty, Mode=TwoWay}"/>
+        <Label Text="{Binding SelectedWaluty.code}" HorizontalOptions="Center" Style="{DynamicResource TitleStyle}"/>
+        <Label x:Name="selected" Text="{Binding SelectedWaluty.mid}" HorizontalOptions="Center" Style="{DynamicResource TitleStyle}"/>
+        <Entry x:Name="input" Keyboard="Numeric"/>
+        <Label x:Name="result" HorizontalOptions="Center" Style="{DynamicResource TitleStyle}"/>
+        <Button Text="Oblicz" VerticalOptions="Center" Clicked="Button_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
